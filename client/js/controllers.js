@@ -1,6 +1,6 @@
 var app = angular.module("dacApp");
 
-app.controller("PostsController", ['$scope', '$location', 'postService', function($scope, $location, PostService){
+app.controller("PostsController", ['$scope', '$location', 'PostService', function($scope, $location, PostService){
 
   $scope.posts = PostService.query();
 
@@ -26,6 +26,27 @@ app.controller("PostController", ['$scope', '$location', '$routeParams', 'PostSe
     $location.path('/');
   });
 }]);
+
+app.controller('NavbarController', function ($scope, $location, Auth) {
+    $scope.menu = [{
+      'title': 'Home',
+      'link': '/'
+    }];
+
+    $scope.isCollapsed = true;
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.isAdmin = Auth.isAdmin;
+    $scope.getCurrentUser = Auth.getCurrentUser;
+
+    $scope.logout = function() {
+      Auth.logout();
+      $location.path('/login');
+    };
+
+    $scope.isActive = function(route) {
+      return route === $location.path();
+    };
+  });
 
 
 app.controller("EditPostController", ['$scope', '$location', '$routeParams', 'PostService', function($scope, $location, $routeParams, PostService){
