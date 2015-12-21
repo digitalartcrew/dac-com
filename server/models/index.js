@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'); 
 mongoose.set('debug',true);
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/openhouseapp");
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/dac-com");
 
-module.exports.Home = require("./home");
+module.exports.Post = require("./post");

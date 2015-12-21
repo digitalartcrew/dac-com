@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 // use method-override
 app.use(methodOverride('_method'));
 
-app.use('/api/posts', homeRoutes);
+app.use('/api/posts', postRoutes);
 
 // Set home page route
 app.get('*', function(req, res) {

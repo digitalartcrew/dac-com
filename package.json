@@ -2,7 +2,7 @@
   "name": "dac-com",
   "version": "1.0.0",
   "description": "Digital Art Crew",
-  "main": "index.js",
+  "main": "server/app.js",
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
