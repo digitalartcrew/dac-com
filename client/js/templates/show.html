@@ -1,0 +1,22 @@
+<div class="container">
+<div class="row">
+	<div class="col-md-4" id="posts">
+				<h5 id="textTitle">{{post.title}}</h5>
+				<img id="postImg" src="{{post.imageUrl}}">
+				<span>{{post.display}}</span> 
+
+				 <span id="textVoteUp" class="glyphicon glyphicon-arrow-up" ng-click="voteUp(post)"></span><span id="textVoteDown" class="glyphicon glyphicon-arrow-down" ng-click="voteDown(post)"></span>
+
+				<span id="textVoteCount" ng-class="post.voteCount > 0 ? 'pos' :(post.voteCount < 0 ?'neg' : 'neu' )">{{post.voteCount}}</span>
+
+				<span id="textAuth"><h5>By {{post.author}}</h5></span>
+		
+			</div>
+
+<div class="col-md-10-offset-1">
+
+<a href="/posts"><button>Back to posts</button></a>
+<a ng-href="/posts/{{post._id}}/edit"><button>Edit this post</button></a>
+</div>
+</div>
+</div>
